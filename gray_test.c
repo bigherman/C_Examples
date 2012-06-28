@@ -2,7 +2,7 @@
 * Conversion between Gray Code and Binary, also providing examples
   of c bitwise functions and of returning arrays from functions  
 * Author: pasa@mercantec.dk
-* Revision 0 - 26-jun-2012 
+* Revision 1 - 27-jun-2012 
 *****************************************************************/
 
 #include <stdio.h>
@@ -82,12 +82,14 @@ int main ()
 	
 	while (i < 256)
 	{
-		printf ("%s%d\t", "Decimal: ", i);
-		printf ("%s%s\t", "Binary: ", intToBin(i));
+		printf ("%d\t", i);
+		printf ("%s%s\t", "Bin: ", intToBin(i));
+		printf ("%s%X\t", "Hex: ", i);
+		printf ("%10s%o\t", "Oct: ", i);
 		printf ("%s%s\t", "Gray: ", intToBin(binaryToGray(i)));
 		printf ("%s%s\t", "Ones: ", intToBin(onesComplement(i)));
 		printf ("%s%s\t", "Twos: ", intToBin(twosComplement(i)));
-		printf ("%s%s\n", "Add (Binary and Twos): ", intToBin(i + twosComplement(i)));
+		printf ("%s%s\n", "Add (Bin and Twos): ", intToBin(i + twosComplement(i)));
 		i++;
 	}
 }
